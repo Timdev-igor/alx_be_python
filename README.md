@@ -1,2 +1,2 @@
 # alx_be_python
-python scripts 
+arithmetic operations for python
