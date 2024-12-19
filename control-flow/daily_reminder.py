@@ -23,4 +23,4 @@ else:
     reminder += " Invalid input for time sensitivity. Please answer 'yes' or 'no'."
 
 # Output the final reminder
-print(reminder)
+print("Reminder:",reminder)
