@@ -10,7 +10,7 @@ def main():
 
     while True:
         display_menu()  # Display the menu to the user
-        choice = input("Enter your choice(1,2,3,4): ")  # Get user input
+        choice = input("Enter your choice(1-4): ")  # Get user input
 
         if choice == '1':
             # Add an item to the shopping list
