@@ -1,47 +1,50 @@
-select = str(input("what is the weather today(sunny,windy):? "))
+while True:
+    select = input("What is the weather today (sunny, windy, or type 'exit' to quit): ").strip().lower()
 
-match select :
+    if select == "exit":
+        print("Exiting the program. Stay safe!")
+        break
 
-    case 'sunny':
-        degrees = int(input("how degrees is it(30-47)?:  "))
-        if degrees ==  40:
-            print("The weather is moderately hot ,wear sunglasses")
-        elif degrees <= 40:
-            print(f"Sunny weather at {degrees}degrees is safe.")
-        elif degrees > 45:
-            print(f"High deegrees like {degrees} are harmful for your skin ") 
-    case 'windy':
-        wind_speed = str(input("what is wind intensity(strong,mild):  "))
+    elif select == "sunny":
+        try:
+            degrees = int(input("How many degrees is it (30-47)?: "))
+            if degrees == 40:
+                print("The weather is moderately hot, wear sunglasses.")
+            elif degrees <= 40:
+                print(f"Sunny weather at {degrees} degrees is safe.")
+            elif degrees > 49:
+                print(f"High degrees like {degrees} are harmful for your skin.")
+        except ValueError:
+            print("Please enter a valid number for the temperature.")
+
+    elif select == "windy":
+        wind_speed = input("What is wind intensity (strong, mild)?: ").strip().lower()
         if wind_speed == "strong":
-            print("its windy in carlifornia choose options from below :BE SAFE")
-            print("1. coat")
-            print("4. get indoors")
-            choice =str(input(":"))
-            if choice == "coat":
-                print("cant wear this now")
-            elif  choice == "get indoors":
-                   print("Good, you choose the right option,stay safe")
+            print("It's windy in California. Choose options from below: BE SAFE")
+            print("1. Wear a coat")
+            print("2. Get indoors")
+            choice = input("Choose an option (1 or 2): ").strip()
+            if choice == "1":
+                print("Can't wear this now.")
+            elif choice == "2":
+                print("Good, you chose the right option. Stay safe!")
             else:
-                   print("choose a valid option")
+                print("Choose a valid option.")
+
         elif wind_speed == "mild":
-            print("its windy in carlifornia choose options from below :BE SAFE")
-            print("1. coat")
-            print("4. get indoors")
-            choice =str(input(":"))
-            if choice == "coat":
-                print("Thank you, the coat will protect you from cold")
-            elif  choice == "get indoors":
-                   print("Good,stay safe, still you can go outside with a coat")
+            print("It's windy in California. Choose options from below: BE SAFE")
+            print("1. Wear a coat")
+            print("2. Get indoors")
+            choice = input("Choose an option (1 or 2): ").strip()
+            if choice == "1":
+                print("Thank you, the coat will protect you from the cold.")
+            elif choice == "2":
+                print("Good, stay safe. Still, you can go outside with a coat.")
             else:
-                   print("choose a valid option")
+                print("Choose a valid option.")
+
         else:
-             print("invalid option")
-    case _:
-          print("please choose from the provided options in parenthesis")
-             
-   
-        
+            print("Invalid wind intensity option. Please choose 'strong' or 'mild'.")
 
-
-
-        
+    else:
+        print("Please choose from the provided options (sunny, windy, or exit).")
