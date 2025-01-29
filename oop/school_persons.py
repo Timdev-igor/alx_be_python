@@ -1,4 +1,4 @@
-""" this is a practice on using __str__ , single_inheritance and __repr__ and __del__ """
+""" this is a practice on using __str__ , single_inheritance and __repr__ and delete"""
 class  person:
 
 
