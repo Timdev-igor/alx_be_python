@@ -1,11 +1,16 @@
-""" this is a practice on using strings , single_inheritance and repr's """
+""" this is a practice on using __str__ , single_inheritance and __repr__ and __del__ """
 class  person:
 
 
     def __init__(self,person_name, person_age):
         self.person_name=person_name
         self.person_age=person_age
-        
+    
+    def delete(self):
+        """Custom method to delete an object manually"""
+        print(f"Deleting {self.__class__.__name__}: {self.person_name}")
+        del self  #
+
     
 class  student(person):
     def __init__(self,person_name,person_age,student_class):
@@ -33,7 +38,7 @@ class teacher(person):
     
     def __repr__(self):
         return f"Teacher('{self.person_name}', {self.person_age}, '{self.teacher_subject}')"
-    
+  
     
 class staff(person):
     def __init__(self, person_name, person_age,staff_profession):
@@ -66,6 +71,7 @@ print(staff5)
 print(student1)
 print(teacher1)
 print(staff1)
+student1.delete()
 
 
  
